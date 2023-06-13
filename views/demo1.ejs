@@ -107,6 +107,10 @@
       var Waves = this;
       var width = Waves.holder.offsetWidth;
       var height = Waves.holder.offsetHeight;
+
+      width = window.innerWidth
+      height = window.innerHeight
+
       Waves.scale = window.devicePixelRatio || 1;
       Waves.width = width * Waves.scale;
       Waves.height = height * Waves.scale;
@@ -257,8 +261,21 @@
       return Math.random() > 0.5 ? 1 : -1;
     }
   })();
-  var waves = new Waves("#holder", { waves: 3, width: 300 });
+  var waves = new Waves("#holder", { waves: 5, width: 300 });
   waves.animate();
 </script>
 </body>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #holder {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 </html>
